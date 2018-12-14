@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Oauth2 Client</h1>
+<button class="btn btn-default" id="get-permission">Get Permission</button>
+@*<script>
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+        } else if (this.readyState == 4 && this.status == 403) {
+            alert("Request login");
+            location.href = "http://oauth2serverapt.azurewebsites.net/oauth2/authentication?clientId=a44d5338-490f-49a0-90dd-1f99db9e099b&scope=Basic";
+        }
+    };
+    xhr.open("GET", "https://songresource20181105090451.azurewebsites.net/api/songs", true);
+    xhr.setRequestHeader("Authorization", "Basic 1A2");
+    xhr.send();
+</script>*@
+<script>
+    var OAUTH2_SERVER = "https://oauth2serverapt.azurewebsites.net";
+    var OAUTH2_AUTHORIZATION_URI = "/Oauth2/Authorization";
+    var OAUTH2_EXCHANGE_TOKEN_URI = "/Oauth2/ExchangeToken";
+    var CLIENT_ID = "32fbe4cd-d1ec-476b-956e-252df3915fa3";
+    var SCOPES = "http://basicscope.com, http://songresourcescope.com";
+
+    var RESOURCE_SERVER = "https://oauth2resourceserver.azurewebsites.net";
+    var RESOURCE_SONG_URI = "/api/songs";
+    document.addEventListener("DOMContentLoaded", function () {
+
+        document.getElementById("get-permission").onclick = getPermission;
+        var url = new URL(location.href);
+        var exchangeCode = url.searchParams.get("code");
+        if (exchangeCode) {
+            exchangeToken(exchangeCode);
+        } else {
+            loadSongFromResourceServer();
+        }       
+    });
+
+    function loadSongFromResourceServer(parameters) {
+        var token = localStorage.getItem("access-token");
+        if (!token) {
+            getPermission();
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                alert(this.responseText);
+            } else if (this.readyState === 4 && this.status === 404) {
+                alert("Bad request");
+            } else if (this.readyState === 4 && this.status === 403) {
+                alert("Forbidden");
+                getPermission();
+            }
+        };
+        xhr.open("GET", RESOURCE_SERVER + RESOURCE_SONG_URI, true);
+        xhr.setRequestHeader("Authorization", "Basic " + token);
+        xhr.send();
+    }
+
+    function getPermission() {
+        location.href = OAUTH2_SERVER + OAUTH2_AUTHORIZATION_URI + "?clientId=" + CLIENT_ID + "&scopes=" + SCOPES;
+    }
+
+    function exchangeToken(exchangeCode) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                var credential = JSON.parse(this.responseText);
+                localStorage.setItem("access-token", credential.accessToken);
+            } else if (this.readyState === 4 && this.status === 404) {
+                alert("Invalid code");                    
+            }
+        };
+        xhr.open("GET", OAUTH2_SERVER + OAUTH2_EXCHANGE_TOKEN_URI + "?exchangeCode=" + exchangeCode, true);            
+        xhr.send();
+    }   
+</script>
+

@@ -1,0 +1,14 @@
+C:\Users\xuan hung\source\repos\Oauth2ResourceServer\Oauth2ResourceServer\obj\Debug\netcoreapp2.1\Oauth2ResourceServer.csproj.CoreCompileInputs.cache
+C:\Users\xuan hung\source\repos\Oauth2ResourceServer\Oauth2ResourceServer\obj\Debug\netcoreapp2.1\Oauth2ResourceServer.RazorAssemblyInfo.cache
+C:\Users\xuan hung\source\repos\Oauth2ResourceServer\Oauth2ResourceServer\obj\Debug\netcoreapp2.1\Oauth2ResourceServer.RazorAssemblyInfo.cs
+C:\Users\xuan hung\source\repos\Oauth2ResourceServer\Oauth2ResourceServer\obj\Debug\netcoreapp2.1\Oauth2ResourceServer.AssemblyInfoInputs.cache
+C:\Users\xuan hung\source\repos\Oauth2ResourceServer\Oauth2ResourceServer\obj\Debug\netcoreapp2.1\Oauth2ResourceServer.AssemblyInfo.cs
+C:\Users\xuan hung\source\repos\Oauth2ResourceServer\Oauth2ResourceServer\bin\Debug\netcoreapp2.1\Oauth2ResourceServer.deps.json
+C:\Users\xuan hung\source\repos\Oauth2ResourceServer\Oauth2ResourceServer\bin\Debug\netcoreapp2.1\Oauth2ResourceServer.runtimeconfig.json
+C:\Users\xuan hung\source\repos\Oauth2ResourceServer\Oauth2ResourceServer\bin\Debug\netcoreapp2.1\Oauth2ResourceServer.runtimeconfig.dev.json
+C:\Users\xuan hung\source\repos\Oauth2ResourceServer\Oauth2ResourceServer\bin\Debug\netcoreapp2.1\Oauth2ResourceServer.dll
+C:\Users\xuan hung\source\repos\Oauth2ResourceServer\Oauth2ResourceServer\bin\Debug\netcoreapp2.1\Oauth2ResourceServer.pdb
+C:\Users\xuan hung\source\repos\Oauth2ResourceServer\Oauth2ResourceServer\obj\Debug\netcoreapp2.1\Oauth2ResourceServer.csprojAssemblyReference.cache
+C:\Users\xuan hung\source\repos\Oauth2ResourceServer\Oauth2ResourceServer\obj\Debug\netcoreapp2.1\Oauth2ResourceServer.RazorTargetAssemblyInfo.cache
+C:\Users\xuan hung\source\repos\Oauth2ResourceServer\Oauth2ResourceServer\obj\Debug\netcoreapp2.1\Oauth2ResourceServer.dll
+C:\Users\xuan hung\source\repos\Oauth2ResourceServer\Oauth2ResourceServer\obj\Debug\netcoreapp2.1\Oauth2ResourceServer.pdb
